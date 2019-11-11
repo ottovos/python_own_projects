@@ -1,3 +1,6 @@
+dic_rest_bpm={"10":69,"11":59,"ideal":50,"sport":39}#source= https://en.wikipedia.org/wiki/Heart_rate#Resting_heart_rate. keys are age in years. values are low range of bpm. until 10 the value is 69bpm and above 10 value is 59 bpm #ideal is considered as good rest bpm by doctors.
+
+
 def get_non_negative_int(prompt):#definition to check that input of the user for prompt age and bpm are positive integers
     while True:
         try:
@@ -17,19 +20,10 @@ var_age = get_non_negative_int("Please enter your age: ")
 my_bpm = get_non_negative_int("Please enter your heart rate in rest: ")
 
 
-dic_rest_bpm={"10":69,"11":59,"ideal":50,"sport":39}#source= https://en.wikipedia.org/wiki/Heart_rate#Resting_heart_rate. keys are age in years. values are low range of bpm. until 10 the value is 69bpm and above 10 value is 59 bpm #ideal is considered as good rest bpm by doctors. 
-
-#print("your age is {}".format(var_age))
-#print("your beats per minute in rest are {}".format(my_bpm))
-
-if var_age > 10: #simple match the input age for the dictionary key
+if var_age > 10: #simple match the input age for the dictionary key and as input for get_my_bpm_value
     var_age=11
 else:
     var_age=10    
-#print("here is var_age = {} after matching".format(var_age))
-
-
-
 
 def get_my_bpm_value(val): #definition to get the value of the rest_bpm matching to the age
     for key, value in dic_rest_bpm.items(): 
@@ -39,12 +33,12 @@ def get_my_bpm_value(val): #definition to get the value of the rest_bpm matching
     return "key doesn't exist"
 my_optimal_bpm=get_my_bpm_value(var_age)
 
+
 print("Based on your age, your optimal bpm in rest is {}".format(my_optimal_bpm))
 bpm_to_gain=(my_bpm - my_optimal_bpm)
 ideal_bpm=dic_rest_bpm.get("ideal")
 sport_bpm=dic_rest_bpm.get("sport")
-#print(bpm_to_gain)
-#print(sport_bpm)
+
 
 def give_bpm_roi(x):#number of heartbeats you receive when lowering current bpm with 1.
     var_hour=x*(60)
@@ -74,19 +68,3 @@ else:
     #print(roi_mine)
     print("You can win {} beats per minute".format(bpm_to_gain))
     print("If you would lower your current rest bpm of {} to your optimal rest bpm of {} you would gain {} heart beats every hour".format(my_bpm,my_optimal_bpm,roi_mine["hourly gain"]))
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
