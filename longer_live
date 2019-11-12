@@ -23,13 +23,13 @@ my_bpm = get_non_negative_int("Please enter your heart rate in rest: ")
 if var_age > 10: #simple match the input age for the dictionary key and as input for get_my_bpm_value
     var_age=11
 else:
-    var_age=10    
+    var_age=10
 
 def get_my_bpm_value(val): #definition to get the value of the rest_bpm matching to the age
-    for key, value in dic_rest_bpm.items(): 
-         if val == int(key): 
-             return value 
-  
+    for key, value in dic_rest_bpm.items():
+         if val == int(key):
+             return value
+
     return "key doesn't exist"
 my_optimal_bpm=get_my_bpm_value(var_age)
 
@@ -54,7 +54,7 @@ if my_bpm < sport_bpm:
 elif my_bpm<=ideal_bpm:
     print("You have a great bpm in rest of {} bpm. A rest condition of {} is considered a good rest bpm".format(my_bpm,ideal_bpm))
 elif bpm_to_gain <= 0:
-    print("You are already doing quite well for your age with {} bpm in rest. You are {} bpm lower than the optimal {} bpm in rest".format(my_bpm,bpm_to_gain, my_optimal_bpm))    
+    print("You are already doing quite well for your age with {} bpm in rest. You are {} bpm lower than the optimal {} bpm in rest".format(my_bpm,bpm_to_gain, my_optimal_bpm))
 else:
     roi_1=give_bpm_roi(1)
     #print(roi_1)
@@ -68,9 +68,9 @@ else:
     #print(roi_mine)
     print("You can win {} beats per minute".format(bpm_to_gain))
     print("If you would lower your current rest bpm of {} to your optimal rest bpm of {} you would gain {} heart beats every hour".format(my_bpm,my_optimal_bpm,roi_mine["hourly gain"]))
- 
- 
- x1_ax=(list(roi_1.keys()))
+
+
+x1_ax=(list(roi_1.keys()))
 y1_ax=(list(roi_1.values()))
 
 
@@ -96,13 +96,13 @@ x1=x1_ax
 y1=y1_ax
 
 # plotting the line 1 points
-plt.plot(x1, y1, label = "1 bpm gain")
+plt.plot(x1, y1, label = "if you would lower with 1 bpm")
 
 #line 2 points
 x2 = xmine_ax
 y2 = ymine_ax
 # plotting the line 2 points
-plt.plot(x2, y2, label = "your potential {} bpm".format(bpm_to_gain))
+plt.plot(x2, y2, label = "if you would lower with {} to your ideal {} bpm".format(bpm_to_gain,ideal_bpm))
 
 # naming the x axis
 plt.xlabel('number of hearbeats you reduce')
@@ -116,4 +116,3 @@ plt.legend()
 
 # function to show the plot
 plt.show()
-
