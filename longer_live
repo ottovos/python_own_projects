@@ -68,3 +68,52 @@ else:
     #print(roi_mine)
     print("You can win {} beats per minute".format(bpm_to_gain))
     print("If you would lower your current rest bpm of {} to your optimal rest bpm of {} you would gain {} heart beats every hour".format(my_bpm,my_optimal_bpm,roi_mine["hourly gain"]))
+ 
+ 
+ x1_ax=(list(roi_1.keys()))
+y1_ax=(list(roi_1.values()))
+
+
+x3_ax=(list(roi_3.keys()))
+y3_ax=(list(roi_3.values()))
+#
+# x5_ax=(list(roi_5.keys()))
+# y5_ax=(list(roi_5.values()))
+#
+# x10_ax=(list(roi_10.keys()))
+# y10_ax=(list(roi_10.values()))
+#
+xmine_ax=(list(roi_mine.keys()))
+ymine_ax=(list(roi_mine.values()))
+
+
+
+
+import matplotlib.pyplot as plt
+
+# line 1 points
+x1=x1_ax
+y1=y1_ax
+
+# plotting the line 1 points
+plt.plot(x1, y1, label = "1 bpm gain")
+
+#line 2 points
+x2 = xmine_ax
+y2 = ymine_ax
+# plotting the line 2 points
+plt.plot(x2, y2, label = "your potential {} bpm".format(bpm_to_gain))
+
+# naming the x axis
+plt.xlabel('number of hearbeats you reduce')
+# naming the y axis
+plt.ylabel('number of heartbeats you gain')
+# giving a title to my graph
+plt.title('Number of heartbeats you gain in total')
+
+# show a legend on the plot
+plt.legend()
+
+# function to show the plot
+plt.show()
+
