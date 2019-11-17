@@ -1,0 +1,42 @@
+{
+	"info": {
+		"_postman_id": "541b35dc-79d4-4d47-8eb7-39958fe6e3e6",
+		"name": "Calculate my additional heartbeats",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post name",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"my_bpm\" : 75,\n    \"var_age\" : 55\n}\n"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/my-extra-time",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"my-extra-time"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
