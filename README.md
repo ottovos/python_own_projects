@@ -24,4 +24,4 @@ Based on age and current rest bpm the fucntion returns:
 ## Calculate my additional heartbeats.postman_collection
 ### What is it?
 - POSTMAN file with configuration (well....)
-- change the fields ny_age and my_bpm
+- change the fields my_age and my_bpm
