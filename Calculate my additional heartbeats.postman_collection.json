@@ -13,13 +13,13 @@
 					{
 						"key": "Content-Type",
 						"name": "Content-Type",
-						"value": "application/x-www-form-urlencoded",
+						"value": "application/json",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"my_bpm\" : 75,\n    \"var_age\" : 55\n}\n"
+					"raw": "{\n    \"my_bpm\" : 75,\n    \"var_age\": 55\n}\n"
 				},
 				"url": {
 					"raw": "http://127.0.0.1:5000/my-extra-time",
