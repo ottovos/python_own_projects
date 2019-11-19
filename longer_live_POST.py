@@ -81,7 +81,7 @@ def my_extra_time():
     return '''
            Your rest bpm is {}
            For your age the optimal bpm in rest is {}
-           The beats per minute you win with your optimal {} are {} heartbeats per hour'''.format(my_bpm, my_optimal_bpm, bpm_to_gain, roi_mine)
+           The beats per minute you win with your optimal bpm are {} heartbeats per hour'''.format(my_bpm, my_optimal_bpm, bpm_to_gain, roi_mine)
 
 
 if __name__ == '__main__':
